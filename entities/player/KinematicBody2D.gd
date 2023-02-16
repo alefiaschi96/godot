@@ -12,13 +12,17 @@ func _process(delta):
 	
 	if Input.is_action_pressed("ui_up"):
 		velocity.y = -1
-	if Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		velocity.y = 1
-	if Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right"):
 		velocity.x = 1
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -1
 
-	var movement = velocity.normalized() * 200 * delta
-	
+	var movement = velocity.normalized() * 150 * delta
 	self.move_and_collide(movement)
+	#self.update_animations(velocity)
+
+
+#func update_animations(velocity):
+	
